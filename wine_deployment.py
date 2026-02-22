@@ -19,20 +19,20 @@ sulphates= st.number_input("sulphates")
 alcohol= st.number_input("alcohol")
 quality= st.number_input("quality")
 
-input_data = pd.DataFrame({
-    "fixed_acidity": [fixed_acidity],
-    "volatile_acidity": [volatile_acidity],
-    "citric_acid": [citric_acid],
-    "residual_sugar": [residual_sugar],
-    "chlorides": [chlorides],
-    "free_sulfur_dioxide": [free_sulfur_dioxide],
-    "total_sulfur_dioxide": [total_sulfur_dioxide],
-    "density": [density],
-    "pH": [pH],
-    "sulphates": [sulphates],
-    "alcohol": [alcohol],
-    "quality": [quality]
-})
+input_data = pd.DataFrame([[
+    fixed_acidity,
+    volatile_acidity,
+    citric_acid,
+    residual_sugar,
+    chlorides,
+    free_sulfur_dioxide,
+    total_sulfur_dioxide,
+    density,
+    pH,
+    sulphates,
+    alcohol,
+    quality
+]], columns=model.feature_name_in_)
 
 if st.button("predict"):
     prediction = model.predict(input_data)[0]
